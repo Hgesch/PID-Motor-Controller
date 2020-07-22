@@ -4,69 +4,6 @@ Abstract
 		DC motors are used in industry extensively due to their high reliability, low cost, simple control of speed and position, low energy consumption and their compatibility with digital systems. There are different methods for controlling the speed of DC motors, mainly armature voltage or field control. In this paper, the speed of a separately excited DC motor is controlled by means of self-tuning PID method in which the KP, KI and KD values are constant, and are determined for a specific speed, in a self-tuning PID, KP, KI and KD values are varied with the speed variations. In this paper, two distinct systems have been suggested for the control of DC motor. The output is examined and compared using the error and derivative error, or error and integrated error. 
 
  
-Table of Contents
-	Page
-
-	INTRODUCTION	1
-
-	PROCEDURE	1
-
-	      Designing of the PID Motor Controller	 1
-
-Program of the PID Motor Controller							 4
-
-      	Constructing the PID Motor Controller 						 9
-
-Testing the PID Motor Controller							10
-
-	ERRORS	12
-
-	CONCLUSIONS	13
-
-	REFERENCES	14
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-List of Figures
-
-Figure	Page
-
-	1	PID Schematic	4
-
-	2	PID Motor Circuit	5
-
- 	3     	Graph of a PID System Behavior	6
-
-	4     	Graph of a Stopped PID System Behavior	7
-
-
-
- 
 INTRODUCTION
 
 This PID speed controlling motor demonstrates how to implement a PID based DC motor controller using Raspberry Pi. The PID motor controller program is developed using Python. It consists of a GUI, RPM measuring, error detector, PID controller functions, and PWM generation function. The PID based closed-loop DC motor control system is one that determines a difference in the required speed and actual motor speed and creates a correction control signal to remove the error. 
@@ -208,40 +145,9 @@ ERRORS
 
 
 
-
-
-
-
 CONCLUSION
 
 	 The objective of this project was to gain knowledge in the use of the designing process of a PID system. Which will also aid the student in future courses and in careers in the electrical engineering field. The proportional, integral, and derivative control modes each fulfill a unique function. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -254,7 +160,6 @@ REFERENCES
 [2]		“Introduction: PID Controller Design.”  MATLAB and Simulink - Introduction: PID Controller Design, 
 www.ctms.engin.umich.edu/CTMS/index.php?example=Introduction§ion=ControlPID
 [3]		“PID Theory Explained.” PID Theory Explained - National Instruments, www.ni.com/en-us/innovations/white-papers/06/pid-theory-explained.html 
-[4]	
 
 
 

@@ -1,0 +1,158 @@
+>> Kp = 1;
+Ki = 1;
+Kd = 1;
+
+s = tf('s');
+C = Kp + Ki/s + Kd*s
+
+C =
+ 
+  s^2 + s + 1
+  -----------
+       s
+ 
+Continuous-time transfer function.
+
+>> C = pid(Kp,Ki,Kd)
+
+C =
+ 
+             1          
+  Kp + Ki * --- + Kd * s
+             s          
+
+  with Kp = 1, Ki = 1, Kd = 1
+ 
+Continuous-time PID controller in parallel form.
+
+>> tf(C)
+
+ans =
+ 
+  s^2 + s + 1
+  -----------
+       s
+ 
+Continuous-time transfer function.
+
+>> s = tf('s');
+P = 1/(s^2 + 10*s + 20);
+step(P)
+>> Kp = 300;
+C = pid(Kp)
+T = feedback(C*P,1)
+
+t = 0:0.01:2;
+step(T,t)
+
+C =
+ 
+  Kp = 300
+ 
+P-only controller.
+
+
+T =
+ 
+        300
+  ----------------
+  s^2 + 10 s + 320
+ 
+Continuous-time transfer function.
+
+>> Kp = 300;
+Kd = 10;
+C = pid(Kp,0,Kd)
+T = feedback(C*P,1)
+
+t = 0:0.01:2;
+step(T,t)
+
+C =
+ 
+             
+  Kp + Kd * s
+             
+
+  with Kp = 300, Kd = 10
+ 
+Continuous-time PD controller in parallel form.
+
+
+T =
+ 
+     10 s + 300
+  ----------------
+  s^2 + 20 s + 320
+ 
+Continuous-time transfer function.
+
+>> Kp = 30;
+Ki = 70;
+C = pid(Kp,Ki)
+T = feedback(C*P,1)
+
+t = 0:0.01:2;
+step(T,t)
+
+C =
+ 
+             1 
+  Kp + Ki * ---
+             s 
+
+  with Kp = 30, Ki = 70
+ 
+Continuous-time PI controller in parallel form.
+
+
+T =
+ 
+         30 s + 70
+  ------------------------
+  s^3 + 10 s^2 + 50 s + 70
+ 
+Continuous-time transfer function.
+
+>> Kp = 350;
+Ki = 300;
+Kd = 50;
+C = pid(Kp,Ki,Kd)
+T = feedback(C*P,1);
+
+t = 0:0.01:2;
+step(T,t)
+
+C =
+ 
+             1          
+  Kp + Ki * --- + Kd * s
+             s          
+
+  with Kp = 350, Ki = 300, Kd = 50
+ 
+Continuous-time PID controller in parallel form.
+
+>> pidTuner(P,'p')
+>> pidTuner(P,C)
+>> opts = pidtuneOptions('CrossoverFrequency',32,'PhaseMargin',90);
+[C, info] = pidtune(P, 'pid', opts)
+
+C =
+ 
+             1          
+  Kp + Ki * --- + Kd * s
+             s          
+
+  with Kp = 320, Ki = 796, Kd = 32.2
+ 
+Continuous-time PID controller in parallel form.
+
+
+info = 
+
+  struct with fields:
+
+                Stable: 1
+    CrossoverFrequency: 32
+           PhaseMargin: 90
